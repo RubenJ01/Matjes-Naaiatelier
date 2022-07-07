@@ -22,8 +22,6 @@
 </script>
 
 <main>
-	<h1>creaties page</h1>
-
 	{#each contentBlocks as product}
 		<div class="creationContainer">
 			<div class="halfContainerImg">
