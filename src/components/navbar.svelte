@@ -60,6 +60,6 @@
 	}
 
 	.nav ul li a:hover {
-		background-color: rgb(98, 245, 98);
+		background-color: rgb(97, 172, 97);
 	}
 </style>
