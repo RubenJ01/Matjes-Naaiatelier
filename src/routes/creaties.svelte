@@ -40,60 +40,39 @@
 </script>
 
 <main>
-
-		{#each contentBlocks as product}
-			<div
-				id={product.id}
-				class="creationContainer"
-				on:click={() => {
-					handleClick(product.id);
-				}}
-			>
-				<div class="halfContainerText">
-					<h3>{product.name}</h3>
-					<h5>{product.price}</h5>
-				</div>
-				<div class="halfContainerImg">
-					<img src={product.src} alt={product.name} />
-				</div>
-			</div>
-		{/each}
-	
+	{#each contentBlocks as product}
+		<div
+			id={product.id}
+			class="creationContainer"
+			on:click={() => {
+				handleClick(product.id);
+			}}
+		>
+			<h3>{product.name}</h3>
+			<h5>{product.price}</h5>
+			<p>click voor meer informatie</p>
+			<img src={product.src} alt={product.name} />
+		</div>
+	{/each}
 </main>
 
 <style>
 	.creationContainer {
 		margin: auto;
-		width: 50vw;
-		height: 25vh;
+		max-width: 50vw;
+		min-height: 50vh;
 		margin-top: 10vh;
-		border: 1px solid #bbb;
 		text-align: center;
 	}
 
-	.halfContainerImg {
-		float: bottom;
-		display: flex;
-		justify-content: center;
-		height: 20vh;
+	.creationContainer img {
 		width: 50vw;
+		max-height: 50vh;
+		object-fit: contain;
 	}
 
-	.halfContainerText {
-		float: top;
-		width: 50vw;
-		height: 5vh;
-	}
-
-	.halfContainerText h3,
-	h5 {
-		margin: 5%;
-		padding: 0;
-	}
-
-	img {
-        width: 50vw;
-        height: 20vh;
-		object-fit: cover;
-	}
+    .creationContainer h3, h5, p {
+        margin: 0;
+        padding: 2px;
+    }
 </style>
