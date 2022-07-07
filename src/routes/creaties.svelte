@@ -26,8 +26,8 @@
 		},
 		{
 			id: '4',
-			src: 'https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_960_720.jpg',
-			name: 'meer landschap',
+			src: 'https://i.gadgets360cdn.com/products/large/moto-g52-db-709x800-1649827920.jpg',
+			name: 'mobile telefoon',
 			price: '€30.00,-',
 			description:
 				'Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.'
@@ -40,7 +40,7 @@
 </script>
 
 <main>
-	<div class="fullContainer">
+
 		{#each contentBlocks as product}
 			<div
 				id={product.id}
@@ -58,23 +58,14 @@
 				</div>
 			</div>
 		{/each}
-	</div>
+	
 </main>
 
 <style>
-	.fullContainer {
-		margin: auto;
-		width: 75%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-
 	.creationContainer {
-		flex: 50%;
 		margin: auto;
-		max-width: 25vw;
-		min-height: 25vh;
+		width: 50vw;
+		height: 25vh;
 		margin-top: 10vh;
 		border: 1px solid #bbb;
 		text-align: center;
@@ -84,15 +75,14 @@
 		float: bottom;
 		display: flex;
 		justify-content: center;
-		height: auto;
-		width: 100%;
+		height: 20vh;
+		width: 50vw;
 	}
 
 	.halfContainerText {
 		float: top;
-
-		width: 100%;
-		height: auto;
+		width: 50vw;
+		height: 5vh;
 	}
 
 	.halfContainerText h3,
@@ -102,16 +92,8 @@
 	}
 
 	img {
-		align-self: center;
-		width: 100%;
+        width: 50vw;
+        height: 20vh;
 		object-fit: cover;
-		padding: 0;
-	}
-
-	@media screen and (max-width: 1000px) {
-		.creationContainer {
-			flex: 100%;
-            max-width: 50vw;
-		}
 	}
 </style>
