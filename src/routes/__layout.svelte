@@ -3,6 +3,7 @@
 </script>
 
 <svelte:head>
+    <title>Martina's Creaties</title>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel="stylesheet">
 </svelte:head>
 

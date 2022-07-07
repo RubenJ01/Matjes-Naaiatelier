@@ -25,10 +25,20 @@
         max-width: 50vw;
         /*border: 1px solid #bbb;*/
         text-align: center;
+        flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		float: center;
     }
 
     .solidDivider {
-        border-top: 2px solid #bbb;
+        align-self: center;
+        border-top: 2px solid #95979b;
         border-radius: 1px;
+    }
+
+    h4, p {
+        color: #95979b;
     }
 </style>

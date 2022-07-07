@@ -52,7 +52,7 @@
 		width: 100%;
 		height: 100%;
 		display: block;
-		color: black;
+		color: #43464d;
 		font-size: large;
 		align-self: center;
 		text-align: center;
