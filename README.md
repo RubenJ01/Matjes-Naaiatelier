@@ -1,5 +1,7 @@
 ## Developing
 
+Use these commands to get this repo up and running!
+
 ```bash
 npm install
 
