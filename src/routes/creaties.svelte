@@ -43,36 +43,84 @@
 	{#each contentBlocks as product}
 		<div
 			id={product.id}
-			class="creationContainer"
+			class="wrapperContainer"
 			on:click={() => {
 				handleClick(product.id);
 			}}
 		>
-			<h3>{product.name}</h3>
-			<h5>{product.price}</h5>
-			<p>click voor meer informatie</p>
-			<img src={product.src} alt={product.name} />
+			<div class="textContainer">
+				<h3>{product.name}</h3>
+				<h5>{product.price}</h5>
+				<p>click voor meer informatie</p>
+			</div>
+
+			<div class="imgContainer">
+				<img src={product.src} alt={product.name} />
+			</div>
 		</div>
 	{/each}
 </main>
 
 <style>
-	.creationContainer {
+	.wrapperContainer {
+		margin: auto;
+		text-align: center;
+		margin-top: 10vh;
+		max-width: 50vw;
+		height: auto;
+	}
+
+	.imgContainer {
+		display: flex;
+		justify-content: center;
 		margin: auto;
 		max-width: 50vw;
-		min-height: 50vh;
-		margin-top: 10vh;
+		max-height: 50vh;
 		text-align: center;
 	}
 
-	.creationContainer img {
-		width: 50vw;
+	.imgContainer img {
+		max-width: 50vw;
 		max-height: 50vh;
 		object-fit: contain;
 	}
 
-    .creationContainer h3, h5, p {
-        margin: 0;
-        padding: 2px;
-    }
+	.textContainer h3,
+	h5,
+	p {
+		margin: 0;
+		padding: 0px;
+	}
+
+	@media only screen and (max-width: 900px) {
+		.textContainer h3 {
+			font-size: 24px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.textContainer h5 {
+			font-size: 16px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.textContainer p {
+			font-size: 16px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrapperContainer {
+			max-width: 75vw;
+		}
+
+		.imgContainer {
+			max-width: 75vw;
+		}
+
+		.imgContainer img {
+			max-width: 75vw;
+		}
+	}
 </style>
