@@ -1,7 +1,23 @@
 <script>
+	import { onMount } from 'svelte';
+	import {
+		Badge,
+		Button,
+		Card,
+		Icon,
+		Input,
+		Modal,
+		ModalBody,
+		ModalFooter,
+		Styles
+	} from 'sveltestrap';
+
+	let open = false;
+	let currID = 1;
+
 	let contentBlocks = [
 		{
-			id: '1',
+			id: 1,
 			src: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
 			name: 'boom',
 			price: '€20.00,-',
@@ -9,7 +25,7 @@
 				'tSed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.est1'
 		},
 		{
-			id: '2',
+			id: 2,
 			src: 'https://cdn.pixabay.com/photo/2013/04/04/12/34/mountains-100367_960_720.jpg',
 			name: 'vogels in de lucht',
 			price: '€10.00,-',
@@ -17,7 +33,7 @@
 				'Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.'
 		},
 		{
-			id: '3',
+			id: 3,
 			src: 'https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_960_720.jpg',
 			name: 'meer landschap',
 			price: '€30.00,-',
@@ -25,7 +41,7 @@
 				'Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.'
 		},
 		{
-			id: '4',
+			id: 4,
 			src: 'https://i.gadgets360cdn.com/products/large/moto-g52-db-709x800-1649827920.jpg',
 			name: 'mobile telefoon',
 			price: '€30.00,-',
@@ -34,20 +50,24 @@
 		}
 	];
 
-	function handleClick(id) {
-		alert(id);
+	let currBlock = getBlock(currID);
+
+	function getBlock(id) {
+		return contentBlocks.find((x) => x.id === id);
+	}
+
+	function toggle(state, id) {
+		open = state;
+		currID = id;
+		console.log(currID);
 	}
 </script>
 
+<Styles />
+
 <main>
 	{#each contentBlocks as product}
-		<div
-			id={product.id}
-			class="wrapperContainer"
-			on:click={() => {
-				handleClick(product.id);
-			}}
-		>
+		<div id={product.id} class="wrapperContainer" on:click={() => toggle(true, product.id)}>
 			<div class="textContainer">
 				<h3>{product.name}</h3>
 				<h5>{product.price}</h5>
@@ -60,6 +80,15 @@
 		</div>
 	{/each}
 </main>
+
+<Modal header="A Modal" isOpen={open}>
+	<ModalBody>
+		{currBlock.id}
+	</ModalBody>
+	<ModalFooter>
+		<Button on:click={() => (open = false)}>Cancel</Button>
+	</ModalFooter>
+</Modal>
 
 <style>
 	.wrapperContainer {
