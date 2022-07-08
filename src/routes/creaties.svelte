@@ -1,14 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		Badge,
 		Button,
-		Card,
-		Icon,
-		Input,
 		Modal,
 		ModalBody,
 		ModalFooter,
+		ModalHeader,
 		Styles
 	} from 'sveltestrap';
 
@@ -49,11 +46,11 @@
 				'Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.'
 		}
 	];
-
-	let currBlock = getBlock(currID);
-
-	function getBlock(id) {
-		return contentBlocks.find((x) => x.id === id);
+	let currBlock;
+		//can be optimized
+	function getBlock(IDD) {
+		
+		return contentBlocks.find(item => item.id === IDD);
 	}
 
 	function toggle(state, id) {
@@ -81,16 +78,23 @@
 	{/each}
 </main>
 
-<Modal header="A Modal" isOpen={open}>
+<Modal isOpen={open}>
+	<ModalHeader> {(currBlock = getBlock(currID)).name}</ModalHeader>
 	<ModalBody>
-		{currBlock.id}
+		{currBlock.description}
+		<img class="modalImg" src={currBlock.src} alt={currBlock.name} />
 	</ModalBody>
 	<ModalFooter>
-		<Button on:click={() => (open = false)}>Cancel</Button>
+		<Button on:click={() => (open = false)}>Close</Button>
 	</ModalFooter>
 </Modal>
 
 <style>
+
+	.modalImg{
+		width: 100% !important;
+	}
+
 	.wrapperContainer {
 		margin: auto;
 		text-align: center;
