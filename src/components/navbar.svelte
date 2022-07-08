@@ -1,65 +1,35 @@
-<div class="nav">
-	<ul>
-		<li><a href="/"><h2>Home</h2></a></li>
-		<li><a href="/creaties"><h2>Creaties</h2></a></li>
-		<li><a href="/about"><h2>About</h2></a></li>
-		<li><a href="/blog"><h2>Blog</h2></a></li>
-	</ul>
-</div>
+<nav class="bg-green-300">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        
+      </div>
+      <div class="flex-1 flex items-left justify-left sm:items-stretch sm:justify-start">
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-8">
+            <a href="/" class="text-gray-800 hover:bg-white hover:text-gray-800 px-3 py-2 rounded-md text-2xl font-large">Home</a>
 
-<style>
-	html,
-	body {
-		margin: 0 !important;
-		padding: 0 !important;
-	}
+            <a href="/creaties" class="text-gray-800 hover:bg-white hover:text-gray-800 px-3 py-2 rounded-md text-2xl font-large">Creaties</a>
 
-	.nav {
-		background-color: lightgreen;
-		height: 10vh;
-		width: 100vw;
-		text-align: center;
-		vertical-align: middle;
-	}
+            <a href="/about" class="text-gray-800 hover:bg-white hover:text-gray-800 px-3 py-2 rounded-md text-2xl font-large">About</a>
 
-	.nav ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		height: 100%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		align-items: center;
-		float: center;
-	}
+            <a href="/blog" class="text-gray-800 hover:bg-white hover:text-gray-800 px-3 py-2 rounded-md text-2xl font-large">Blog</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	.nav h2 {
-		margin: 0;
-		padding: 0;
-	}
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="/" class="text-gray-800 hover:bg-white hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Home</a>
 
-	.nav li {
-		width: 100%;
-		height: 100%;
-		align-self: center;
-		line-height: 10vh;
-	}
+      <a href="/creaties" class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Creaties</a>
 
-	.nav li a {
-		width: 100%;
-		height: 100%;
-		display: block;
-		color: #43464d;
-		font-size: large;
-		align-self: center;
-		text-align: center;
-		text-decoration: none;
-	}
+      <a href="about" class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
 
-	.nav ul li a:hover {
-		background-color: rgb(97, 172, 97);
-	}
-</style>
+      <a href="/blog" class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+    </div>
+  </div>
+</nav>

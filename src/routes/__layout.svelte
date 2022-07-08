@@ -1,10 +1,11 @@
 <script>
+	import '../app.css';
 	import Navbar from '../components/navbar.svelte';
 </script>
 
 <svelte:head>
-    <title>Martina's Creaties</title>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel="stylesheet">
+	<title>Martina&apos;s Creaties</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 </svelte:head>
 
 <Navbar />
@@ -15,6 +16,7 @@
 	:global(body) {
 		margin: 0;
 		padding: 0;
-        font-family: 'Montserrat';font-size: 22px;
+		font-family: 'Montserrat';
+		font-size: 22px;
 	}
 </style>
