@@ -14,7 +14,24 @@
 			name: 'vogels in de lucht',
 			price: '€10.00,-',
 			description:
-				'Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.'
+				`
+				Sed tempor turpis et neque dictum finibus Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus
+				Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod 
+				suscipit.Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus.
+				 Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.
+				 Sed tempor turpis et neque dictum finibus Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus
+				Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod 
+				suscipit.Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus.
+				 Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.
+				 Sed tempor turpis et neque dictum finibus Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus
+				Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod 
+				suscipit.Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus.
+				 Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.
+				 Sed tempor turpis et neque dictum finibus Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus
+				Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod 
+				suscipit.Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus.
+				 Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod suscipit.
+				 `
 		},
 		{
 			id: 3,
@@ -57,8 +74,9 @@
 	{#each contentBlocks as product}
 		<div class="creationContainer" on:click={() => toggle(product.id)}>
 			<div class="halfContainerText">
-				<h3 class="text-xl font-bold">{product.name}</h3>
-				<h5>{product.price}</h5>
+				<h3 class="text-2xl font-bold">{product.name}</h3>
+				<h3 class="text-base">{product.price}</h3>
+				<p class="text-sm">Klik voor meer informatie!</p>
 			</div>
 			<div class="halfContainerImg">
 				<img class="containedImg" src={product.src} alt={product.name} />
@@ -71,10 +89,10 @@
 			<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 			<div class="fixed z-10 inset-0 overflow-y-auto">
 				<div
-					class="flex items-end items-center justify-center min-h-full p-4 text-center sm:p-0"
+					class="flex items-end items-center justify-center min-h-full p-4 text-center lg:p-0"
 				>
 					<div
-						class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full"
+						class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all lg:my-8 lg:max-w-4xl lg:w-full"
 					>
 						<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 							<div class="text-center">
@@ -83,7 +101,7 @@
 										{getCurr(currID).name}
 									</h2>
 									<div class="mt-2">
-										<p class="text-sm text-gray-500">{getCurr(currID).description}</p>
+										<p class="text-sm text-gray-500">{getCurr(currID).description}</p><br>
 									</div>
 								</div>
 								<div>
@@ -93,7 +111,7 @@
 						</div>
 						<div class="bg-white px-4 py-3 sm:px-6 flex-center">
 							<div class="m-auto text-center bg-blue-300 rounded border border-gray-900">
-								<button class="m-1 w-full" on:click={() => toggle(null)}>close</button>
+								<button class="m-1 w-full" on:click={() => toggle(null)}>Sluiten</button>
 							</div>
 						</div>
 					</div>
