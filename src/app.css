@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 .creationContainer {
-    @apply flex  flex-col bg-white text-center w-10/12 md:w-1/2 mx-auto border border-black mt-10%;
+    @apply flex  flex-col bg-white text-center w-10/12 md:w-1/2 mx-auto border border-gray-900 rounded mt-10%;
 }
 
 .halfContainerImg {
-    @apply flex w-full h-auto;
+    @apply flex w-full h-auto p-1;
 }
 
 .halfContainerText {
@@ -16,5 +16,5 @@
 }
 
 .containedImg {
-    @apply mx-auto;
+    @apply mx-auto rounded;
 }
