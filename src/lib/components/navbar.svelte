@@ -56,11 +56,11 @@
 					</div>
 				</a>
 			</div>
-			<div class="px-2 text-center mb-30">
+			<div class="px-2 text-center">
 				<a href="/about">
-					<div class="h-8 py-1  pb-30 self-center">
+					<div class="h-8 py-1 self-center">
 						<p
-							class="flex justify-center text-gray-800 hover:bg-white px-3 py-1 pb-30 rounded-md text-2xl font-large align-middle"
+							class="flex justify-center text-gray-800 hover:bg-white px-3 py-1 rounded-md text-2xl font-large align-middle"
 						>
 							About
 						</p>
