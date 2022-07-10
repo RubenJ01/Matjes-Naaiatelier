@@ -101,6 +101,14 @@
 		currentPage = 1;
 
 	}
+
+	$: if(input == null || input === "") {
+		input = "";
+		console.log(input)
+		items = getItemsWithinSearch(input);
+		currentPage = 1;
+
+	}
 </script>
 
 <main>
