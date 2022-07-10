@@ -107,6 +107,16 @@
 		input = "";
 		items = getItemsWithinSearch(input);
 		currentPage = 1;
+	}
+
+	$: if(pageSize) {
+		if(pageSize > 100) {
+			pageSize = 100;
+		}
+	}
+
+	$: if(pageSize == null || pageSize === "") {
+		pageSize = 1;
 
 	}
 </script>
@@ -143,12 +153,12 @@
 					required=""
 				/>
 					<input
+					bind:value={pageSize}
 					type="number"
 					id="default-number"
-					class="block p-4 text-center pl-10 mt-5 w-2/12 lg:w-2/12 self-center lg:mt-0 lg:self-right text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30"
+					class="block p-4 text-center mt-5 w-2/12 lg:w-2/12 self-center lg:mt-0 lg:self-right text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30"
 					placeholder="Items"
 					required=""
-					value=2
 				/>
 			</div>
 			</div>
