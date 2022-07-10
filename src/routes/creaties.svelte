@@ -1,6 +1,6 @@
 <script>
 	import { paginate, LightPaginationNav } from 'svelte-paginate';
-	let items = [
+	let itemsDefault = [
 		{
 			id: 1,
 			src: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
@@ -57,6 +57,7 @@
 	$: paginatedItems = paginate({ items, pageSize, currentPage });
 
 	let input = '';
+	let items = getItemsWithinSearch(input); 
 
 	let open = false;
 	var currID = 1;
@@ -79,10 +80,25 @@
 		document.body.scrollIntoView();
 	}
 
+	function getItemsWithinSearch(search) {
+		let searchedArray = [];
+		itemsDefault.forEach(item => {
+			if(item.name.includes(search)) {
+				searchedArray.push(item);
+			}
+		});
+		return searchedArray;
+	}
+
 	$: if(currentPage !== currentPageTracker) {
-		console.log("page changed")
 		currentPageTracker = currentPage;
 		scroll(0,0)
+	}
+
+	$: if(input) {
+		console.log(input)
+		items = getItemsWithinSearch(input);
+
 	}
 </script>
 
