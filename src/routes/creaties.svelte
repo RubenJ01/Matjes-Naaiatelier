@@ -54,7 +54,6 @@
 	let currentPage = 1;
 	let currentPageTracker = 1;
 	let pageSize = 2;
-	$: paginatedItems = paginate({ items, pageSize, currentPage });
 
 	let input = '';
 	let items = getItemsWithinSearch(input); 
@@ -89,6 +88,8 @@
 		});
 		return searchedArray;
 	}
+	
+	$: paginatedItems = paginate({ items, pageSize, currentPage });
 
 	$: if(currentPage !== currentPageTracker) {
 		currentPageTracker = currentPage;
@@ -96,7 +97,6 @@
 	}
 
 	$: if(input) {
-		console.log(input)
 		items = getItemsWithinSearch(input);
 		currentPage = 1;
 
@@ -104,7 +104,6 @@
 
 	$: if(input == null || input === "") {
 		input = "";
-		console.log(input)
 		items = getItemsWithinSearch(input);
 		currentPage = 1;
 
