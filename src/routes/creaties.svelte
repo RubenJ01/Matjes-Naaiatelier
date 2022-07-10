@@ -97,7 +97,7 @@
 						<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 							<div class="text-center">
 								<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-center">
-									<h2 class="text-2xl leading-6 font-medium text-gray-900" id="modal-title">
+									<h2 class="text-3xl leading-6 font-medium text-gray-900" id="modal-title">
 										{getCurr(currID).name}
 									</h2>
 									<div class="mt-2">
@@ -110,7 +110,7 @@
 							</div>
 						</div>
 						<div class="bg-white px-4 py-3 sm:px-6 flex-center">
-							<div class="m-auto text-center bg-blue-300 rounded border border-gray-900">
+							<div class="m-auto text-center bg-green-300 rounded border border-gray-900">
 								<button class="m-1 w-full" on:click={() => toggle(null)}>Sluiten</button>
 							</div>
 						</div>
