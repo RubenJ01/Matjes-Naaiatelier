@@ -98,6 +98,7 @@
 	$: if(input) {
 		console.log(input)
 		items = getItemsWithinSearch(input);
+		currentPage = 1;
 
 	}
 </script>
@@ -137,7 +138,6 @@
 				/>
 			</div>
 		</div>
-		{input}
 
 		<hr class="solidDivider" />
 	</div>
