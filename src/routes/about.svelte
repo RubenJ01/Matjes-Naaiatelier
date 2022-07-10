@@ -3,11 +3,11 @@
 
 <main>
     <div class="aboutContainer">
-        <h1 class="text-2xl">Dit ben ik</h1>
-        <h4 class="text-gray-400">email</h4>
-        <h4 class="text-gray-400">telefoon</h4>
+        <h1 class="text-2xl pb-2">Dit ben ik</h1>
+        <h4 class="text-gray-400 text-xl">email</h4>
+        <h4 class="text-gray-400 text-xl py-1">telefoon</h4>
         <hr class="solidDivider">
-        <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rutrum ex quis dapibus. 
+        <p class="text-gray-400 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rutrum ex quis dapibus. 
             Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit. Donec sem nisi, 
             sodales et congue ac, ullamcorper sed justo. In ut augue at tellus consectetur rhoncus. Donec faucibus consectetur orci, 
             auctor vulputate odio vestibulum quis. Curabitur rutrum efficitur lectus eget euismod. Maecenas at posuere orci. 
