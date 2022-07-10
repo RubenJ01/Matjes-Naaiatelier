@@ -1,5 +1,6 @@
 <script>
-	let contentBlocks = [
+	import { paginate, LightPaginationNav } from 'svelte-paginate';
+	let items = [
 		{
 			id: 1,
 			src: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
@@ -50,7 +51,12 @@
 		}
 	];
 
-	let input;
+	let currentPage = 1;
+	let currentPageTracker = 1;
+	let pageSize = 2;
+	$: paginatedItems = paginate({ items, pageSize, currentPage });
+
+	let input = '';
 
 	let open = false;
 	var currID = 1;
@@ -67,11 +73,21 @@
 	};
 
 	function getCurr(id) {
-		return contentBlocks.find((item) => item.id === id);
+		return items.find((item) => item.id === id);
+	}
+	function goTop() {
+		document.body.scrollIntoView();
+	}
+
+	$: if(currentPage !== currentPageTracker) {
+		console.log("page changed")
+		currentPageTracker = currentPage;
+		scroll(0,0)
 	}
 </script>
 
 <main>
+	<button on:click={console.log(currentPage)}>checkPage</button>
 	<div class="w-10/12 lg:w-1/2 mx-auto mb-10">
 		<h1 class="text-center text-4xl font-bold my-5">Creaties</h1>
 
@@ -96,7 +112,8 @@
 						/></svg
 					>
 				</div>
-				<input bind:value={input}
+				<input
+					bind:value={input}
 					type="search"
 					id="default-search"
 					class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30"
@@ -109,18 +126,22 @@
 
 		<hr class="solidDivider" />
 	</div>
-	{#each contentBlocks as product}
-		<div class="creationContainer" on:click={() => toggle(product.id)}>
-			<div class="halfContainerText">
-				<h3 class="text-2xl font-bold">{product.name}</h3>
-				<h3 class="text-base">{product.price}</h3>
-				<p class="text-sm">Klik voor meer informatie!</p>
-			</div>
-			<div class="halfContainerImg">
-				<img class="containedImg" src={product.src} alt={product.name} />
-			</div>
-		</div>
-	{/each}
+	<ul class="items">
+		{#each paginatedItems as product}
+			<li>
+				<div class="creationContainer" on:click={() => toggle(product.id)}>
+					<div class="halfContainerText">
+						<h3 class="text-2xl font-bold">{product.name}</h3>
+						<h3 class="text-base">{product.price}</h3>
+						<p class="text-sm">Klik voor meer informatie!</p>
+					</div>
+					<div class="halfContainerImg">
+						<img class="containedImg" src={product.src} alt={product.name} />
+					</div>
+				</div>
+			</li>
+		{/each}
+	</ul>
 
 	{#if open}
 		<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -157,6 +178,15 @@
 		</div>
 	{/if}
 </main>
+
+<LightPaginationNav class="test"
+	totalItems={items.length}
+	{pageSize}
+	{currentPage}
+	limit={1}
+	showStepOptions={true}
+	on:setPage={(e) => (currentPage = e.detail.page)}
+/>
 
 <style>
 	*,
