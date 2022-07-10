@@ -87,7 +87,6 @@
 </script>
 
 <main>
-	<button on:click={console.log(currentPage)}>checkPage</button>
 	<div class="w-10/12 lg:w-1/2 mx-auto mb-10">
 		<h1 class="text-center text-4xl font-bold my-5">Creaties</h1>
 
@@ -178,7 +177,7 @@
 		</div>
 	{/if}
 </main>
-
+<div class="test">
 <LightPaginationNav class="test"
 	totalItems={items.length}
 	{pageSize}
@@ -186,12 +185,16 @@
 	limit={1}
 	showStepOptions={true}
 	on:setPage={(e) => (currentPage = e.detail.page)}
-/>
+/></div>
 
 <style>
 	*,
 	*:focus,
 	*:hover {
 		outline: none;
+	}
+
+	.test :global(.option.active) {
+		@apply text-green-300;
 	}
 </style>
