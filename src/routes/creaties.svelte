@@ -159,7 +159,7 @@
 					bind:value={pageSizeTransit}
 					type="number"
 					id="default-number"
-					class="block p-4 text-center mt-5 w-2/12 lg:w-2/12 self-center lg:mt-0 lg:self-right text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30"
+					class="block py-4 text-center mt-5 w-2/12 lg:w-2/12 self-center lg:mt-0 lg:self-right text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30"
 					placeholder="Items"
 					required=""
 				/>
