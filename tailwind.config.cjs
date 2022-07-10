@@ -4,7 +4,6 @@ const config = {
 	theme: {
 		extend: {
 			spacing: {
-				'10%': '10%',
 				'max-w-10/12': '83.333333%',
 				'max-w-1/2': '50%',
 			  },

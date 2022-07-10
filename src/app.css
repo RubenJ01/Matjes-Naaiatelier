@@ -4,8 +4,9 @@
 @tailwind utilities;
 
 @layer components {
+    /*components for Creaties page*/
     .creationContainer {
-        @apply flex flex-col bg-white text-center w-10/12 lg:w-1/2 mx-auto rounded mt-10%; /*border border-gray-900*/
+        @apply flex flex-col bg-white text-center w-10/12 lg:w-1/2 mx-auto rounded mt-10 lg:mt-24; /*border border-gray-900*/
     }
 
     .halfContainerImg {
@@ -18,5 +19,13 @@
 
     .containedImg {
         @apply mx-auto rounded;
+    }
+    /*components for About page*/
+    .aboutContainer {
+        @apply mx-auto w-10/12 mt-24 lg:w-1/2 text-center;
+    }
+
+    .solidDivider {
+        @apply border rounded border-gray-400 w-full
     }
 }

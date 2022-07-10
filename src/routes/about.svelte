@@ -3,11 +3,11 @@
 
 <main>
     <div class="aboutContainer">
-        <h2>Dit ben ik</h2>
-        <h4>email</h4>
-        <h4>telefoon</h4>
+        <h1 class="text-2xl">Dit ben ik</h1>
+        <h4 class="text-gray-400">email</h4>
+        <h4 class="text-gray-400">telefoon</h4>
         <hr class="solidDivider">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rutrum ex quis dapibus. 
+        <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rutrum ex quis dapibus. 
             Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipit. Donec sem nisi, 
             sodales et congue ac, ullamcorper sed justo. In ut augue at tellus consectetur rhoncus. Donec faucibus consectetur orci, 
             auctor vulputate odio vestibulum quis. Curabitur rutrum efficitur lectus eget euismod. Maecenas at posuere orci. 
@@ -18,27 +18,5 @@
 </main>
 
 <style>
-    .aboutContainer {
-        margin: auto;
-        width: 50%;
-        margin-top: 10vh;
-        max-width: 50vw;
-        /*border: 1px solid #bbb;*/
-        text-align: center;
-        flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: center;
-		align-items: center;
-		float: center;
-    }
 
-    .solidDivider {
-        align-self: center;
-        border-top: 2px solid #95979b;
-        border-radius: 1px;
-    }
-
-    h4, p {
-        color: #95979b;
-    }
 </style>
