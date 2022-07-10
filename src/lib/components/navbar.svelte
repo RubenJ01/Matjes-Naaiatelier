@@ -32,12 +32,12 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	<div class="sm:hidden justify-center" id="mobile-menu">
-		<div class="px-2 space-y-1 text-center py-1">
+		<div class="px-2 space-y-1 text-center pt-1 pb-4">
 			<a
 				href="/"
 				class="flex justify-center text-gray-800 hover:bg-white px-3 py-1 rounded-md text-2xl font-large"
 			>
-				<div class="h-8 py-1">
+				<div class="h-8">
 					<img
 						class="object-cover relative max-w-full h-full self-center"
 						src="./images/favicon.png"
@@ -47,7 +47,7 @@
 			</a>
 			<div class="px-2 text-center">
 				<a href="/creaties">
-					<div class="h-8 py-1 self-center">
+					<div class="h-8 self-center">
 						<p
 							class="flex justify-center text-gray-800 hover:bg-white px-3 py-1 rounded-md text-2xl font-large align-middle"
 						>
@@ -56,11 +56,11 @@
 					</div>
 				</a>
 			</div>
-			<div class="px-2 text-center pb-3">
+			<div class="px-2 text-center mb-30">
 				<a href="/about">
-					<div class="h-8 py-1 self-center">
+					<div class="h-8 py-1  pb-30 self-center">
 						<p
-							class="flex justify-center text-gray-800 hover:bg-white px-3 py-1 pb-3 rounded-md text-2xl font-large align-middle"
+							class="flex justify-center text-gray-800 hover:bg-white px-3 py-1 pb-30 rounded-md text-2xl font-large align-middle"
 						>
 							About
 						</p>
