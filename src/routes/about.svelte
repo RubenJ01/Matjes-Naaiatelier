@@ -3,7 +3,7 @@
 
 <main>
     <div class="aboutContainer">
-        <h1 class="text-2xl pb-2">Dit ben ik</h1>
+        <h1 class="text-4xl pb-2 font-bold">Dit ben ik</h1>
         <h4 class="text-gray-400 text-xl">email</h4>
         <h4 class="text-gray-400 text-xl py-1">telefoon</h4>
         <hr class="solidDivider">
