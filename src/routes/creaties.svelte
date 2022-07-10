@@ -13,8 +13,7 @@
 			src: 'https://cdn.pixabay.com/photo/2013/04/04/12/34/mountains-100367_960_720.jpg',
 			name: 'vogels in de lucht',
 			price: '€10.00,-',
-			description:
-				`
+			description: `
 				Sed tempor turpis et neque dictum finibus Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus
 				Suspendisse gravida risus ut urna euismod suscipit.Sed tempor turpis et neque dictum finibus.  Suspendisse gravida risus ut urna euismod 
 				suscipit.Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna euismod suscipi Sed tempor turpis et neque dictum finibus.
@@ -51,6 +50,8 @@
 		}
 	];
 
+	let input;
+
 	let open = false;
 	var currID = 1;
 
@@ -73,18 +74,40 @@
 <main>
 	<div class="w-10/12 lg:w-1/2 mx-auto mb-10">
 		<h1 class="text-center text-4xl font-bold my-5">Creaties</h1>
-		
-<div class="mx-5">   
-    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Zoeken2</label>
-    <div class="relative py-4">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        </div>
-        <input type="search" id="default-search" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30" placeholder="Zoeken" required="">
-    </div>
-</div>
 
-		<hr class="solidDivider">
+		<div class="mx-5">
+			<label
+				for="default-search"
+				class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Zoeken</label
+			>
+			<div class="relative py-4">
+				<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+					<svg
+						class="w-5 h-5 text-gray-500 dark:text-gray-400"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						><path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+						/></svg
+					>
+				</div>
+				<input bind:value={input}
+					type="search"
+					id="default-search"
+					class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-30"
+					placeholder="Zoeken"
+					required=""
+				/>
+			</div>
+		</div>
+		{input}
+
+		<hr class="solidDivider" />
 	</div>
 	{#each contentBlocks as product}
 		<div class="creationContainer" on:click={() => toggle(product.id)}>
@@ -103,9 +126,7 @@
 		<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 			<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 			<div class="fixed z-10 inset-0 overflow-y-auto">
-				<div
-					class="flex items-end items-center justify-center min-h-full p-4 text-center lg:p-0"
-				>
+				<div class="flex items-end items-center justify-center min-h-full p-4 text-center lg:p-0">
 					<div
 						class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all lg:my-8 lg:max-w-4xl lg:w-full"
 					>
@@ -116,7 +137,8 @@
 										{getCurr(currID).name}
 									</h2>
 									<div class="mt-2">
-										<p class="text-sm text-gray-500">{getCurr(currID).description}</p><br>
+										<p class="text-sm text-gray-500">{getCurr(currID).description}</p>
+										<br />
 									</div>
 								</div>
 								<div>
@@ -137,7 +159,9 @@
 </main>
 
 <style>
-	*,*:focus,*:hover{
-    	outline:none;
+	*,
+	*:focus,
+	*:hover {
+		outline: none;
 	}
 </style>
