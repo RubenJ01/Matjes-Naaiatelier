@@ -6,7 +6,7 @@
 @layer components {
     /*components for Creaties page*/
     .creationContainer {
-        @apply flex flex-col bg-white text-center w-10/12 lg:w-1/2 mx-auto rounded mt-10 lg:mt-24; /*border border-gray-900*/
+        @apply flex flex-col bg-white text-center w-10/12 lg:w-1/2 mx-auto rounded mb-10 lg:mb-24; /*border border-gray-900*/
     }
 
     .halfContainerImg {

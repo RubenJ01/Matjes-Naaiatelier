@@ -71,6 +71,10 @@
 </script>
 
 <main>
+	<div class="w-10/12 lg:w-1/2 mx-auto mb-10">
+		<h1 class="text-center text-4xl font-bold my-5">Creaties</h1>
+		<hr class="solidDivider">
+	</div>
 	{#each contentBlocks as product}
 		<div class="creationContainer" on:click={() => toggle(product.id)}>
 			<div class="halfContainerText">
