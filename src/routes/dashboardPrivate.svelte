@@ -15,6 +15,13 @@
 	let phone = '06-12351234';
 	let name = 'Dit ben ik';
 
+    let descEdit = desc;
+	let emailEdit = email;
+	let phoneEdit = phone;
+	let nameEdit = name;
+
+    
+
 	if (loggedIn !== 1) {
 		section = 0;
 	}
@@ -117,6 +124,14 @@
 		} else {
 		}
 	}
+
+    function save() {
+        name = nameEdit;
+        email = emailEdit;
+        phone = phoneEdit;
+        desc = descEdit;
+        toggle(null)
+    }
 	//use $: so that when variable changes you execute the code that you want
 
 	$: paginatedItems = paginate({ items, pageSize, currentPage });
@@ -305,27 +320,29 @@
 									<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-center">
 										<div class="mt-2">
 											<input
+                                            bind:value={nameEdit}
 												type="text"
 												id="name"
 												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-												value={name}
 											/><br />
 											<input
+                                            bind:value={emailEdit}
 												type="text"
 												id="email"
 												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-												value={email}
+					
 											/><br />
 											<input
+                                            bind:value={phoneEdit}
 												type="text"
 												id="phone"
 												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-												value={phone}
+											
 											/><br />
 											<textarea
+                                            bind:value={descEdit}
 												class="w-full px-3 py-2 text-gray-700 border text-sm rounded-lg focus:outline-none"
 												rows="10"
-												value={desc}
 											/>
 										</div>
 									</div>
@@ -333,16 +350,15 @@
 							</div>
 
 							<div class="bg-white px-4 py-3 sm:px-6 flex-center">
-								<div
+								<div  on:click={save}
 									class="m-auto text-center bg-green-300 hover:bg-green-500 rounded border border-gray-900"
-								>
-									<button class="m-1" on:click={() => toggle(null)}>Save</button>
+								><button class="m-1">Save</button>
 								</div>
 								<br />
-								<div
+								<div  on:click={() => toggle(null)}
 									class="m-auto text-center bg-green-300 hover:bg-green-500 rounded border border-gray-900"
 								>
-									<button class="m-1" on:click={() => toggle(null)}>Sluiten</button>
+									<button class="m-1">Sluiten</button>
 								</div>
 							</div>
 						</div>
