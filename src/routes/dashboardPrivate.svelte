@@ -1,5 +1,9 @@
 <script>
+    let loggedIn = 1;
 	let section = 1;
+    if(loggedIn !== 1) {
+        section = 0;
+    }
 	import { paginate, LightPaginationNav } from 'svelte-paginate';
 	let itemsDefault = [
 		{
@@ -158,7 +162,10 @@
 	<main>
 		<div class="w-10/12 lg:w-1/2 mx-auto mb-10">
 			<h1 class="text-center text-4xl font-bold my-5">Creaties</h1>
-
+            <div class="mx-auto w-fit">
+                <button class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-2"
+                    >nieuw</button
+                ></div>
 			<div class="mx-5">
 				<div class="relative py-4">
 					<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none" />
@@ -214,52 +221,17 @@
 						<div class="z-index-10 flex justify-center flex-column lg:flex-row">
 							<button
 								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-								>edit</button
+								>bewerken</button
 							>
 							<button
 								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-								>delete</button
+								>verwijderen</button
 							>
 						</div>
 					</div>
 				</li>
 			{/each}
 		</ul>
-
-		{#if open}
-			<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-				<div class="fixed z-10 inset-0 overflow-y-auto">
-					<div class="flex items-end items-center justify-center min-h-full p-4 text-center lg:p-0">
-						<div
-							class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all lg:my-8 lg:max-w-4xl lg:w-full"
-						>
-							<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-								<div class="text-center">
-									<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-center">
-										<h2 class="text-3xl leading-6 font-medium text-gray-900" id="modal-title">
-											{getCurr(currID).name}
-										</h2>
-										<div class="mt-2">
-											<p class="text-sm text-gray-500">{getCurr(currID).description}</p>
-											<br />
-										</div>
-									</div>
-									<div>
-										<img class="containedImg" src={getCurr(currID).src} />
-									</div>
-								</div>
-							</div>
-							<div class="bg-white px-4 py-3 sm:px-6 flex-center">
-								<div class="m-auto text-center bg-green-300 rounded border border-gray-900">
-									<button class="m-1 w-full" on:click={() => toggle(null)}>Sluiten</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		{/if}
 	</main>
 	<div class="test">
 		<LightPaginationNav
@@ -291,21 +263,16 @@
 				cursus, dolor nec aliquam tristique, sapien nisi faucibus nisi, ac facilisis purus lectus
 				dapibus dolor.
 			</p>
-            <hr class="solidDivider mt-10" />
-            <div class="z-index-10 flex justify-center flex-column lg:flex-row">
-                <button
-                    class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-                    >edit</button
-                >
-                <button
-                    class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-                    >delete</button
-                >
-            </div>
+			<hr class="solidDivider mt-10" />
+			<div class="z-index-10 flex justify-center flex-column lg:flex-row">
+				<button
+					class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
+					>edit</button
+				>
+			</div>
 		</div>
 	</main>
 {/if}
-
 
 <style>
 	*,
