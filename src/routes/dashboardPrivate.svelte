@@ -210,7 +210,7 @@
 						<div class="halfContainerImg">
 							<img class="containedImg" src={product.src} alt={product.name} />
 						</div>
-						<hr class="solidDivider" />
+						<hr class="solidDivider  mt-10" />
 						<div class="z-index-10 flex justify-center flex-column lg:flex-row">
 							<button
 								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
@@ -291,9 +291,30 @@
 				cursus, dolor nec aliquam tristique, sapien nisi faucibus nisi, ac facilisis purus lectus
 				dapibus dolor.
 			</p>
+            <hr class="solidDivider mt-10" />
+            <div class="z-index-10 flex justify-center flex-column lg:flex-row">
+                <button
+                    class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
+                    >edit</button
+                >
+                <button
+                    class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
+                    >delete</button
+                >
+            </div>
 		</div>
 	</main>
 {/if}
 
+
 <style>
+	*,
+	*:focus,
+	*:hover {
+		outline: none;
+	}
+
+	.test :global(.option.active) {
+		@apply text-green-300;
+	}
 </style>

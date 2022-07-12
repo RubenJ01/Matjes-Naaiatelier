@@ -5,6 +5,11 @@
 			<div class="hidden sm:block sm:ml-6 flex">
 				<div class="flex space-x-8 self-center py-2">
 					<a
+						href="/testBed"
+						class="text-gray-800 self-left hover:bg-white px-3 py-3 rounded-md text-2xl font-large"
+						>testbed</a
+					>
+					<a
 						href="/creaties"
 						class="text-gray-800 hover:bg-white px-3 py-3 rounded-md text-2xl font-large"
 						>Creaties</a
@@ -24,6 +29,11 @@
 					<a
 						href="/about"
 						class="text-gray-800 hover:bg-white px-3 py-3 rounded-md text-2xl font-large">About</a
+					>
+					<a
+						href="/dashboardPrivate"
+						class="text-gray-800 self-left hover:bg-white px-3 py-3 rounded-md text-2xl font-large"
+						>dashboard</a
 					>
 				</div>
 			</div>
