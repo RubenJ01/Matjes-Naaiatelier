@@ -1,9 +1,23 @@
 <script>
-    let loggedIn = 1;
+	let loggedIn = 1;
 	let section = 1;
-    if(loggedIn !== 1) {
-        section = 0;
-    }
+
+	let desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rutrum ex quis
+				dapibus. Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna
+				euismod suscipit. Donec sem nisi, sodales et congue ac, ullamcorper sed justo. In ut augue
+				at tellus consectetur rhoncus. Donec faucibus consectetur orci, auctor vulputate odio
+				vestibulum quis. Curabitur rutrum efficitur lectus eget euismod. Maecenas at posuere orci.
+				Mauris luctus lacinia risus, eget ornare turpis tincidunt in. Donec sit amet dui quis augue
+				pellentesque interdum ac eget velit. Nullam sodales venenatis nisi non blandit. Proin
+				cursus, dolor nec aliquam tristique, sapien nisi faucibus nisi, ac facilisis purus lectus
+				dapibus dolor.`;
+	let email = 'email@email.com';
+	let phone = '06-12351234';
+	let name = 'Dit ben ik';
+
+	if (loggedIn !== 1) {
+		section = 0;
+	}
 	import { paginate, LightPaginationNav } from 'svelte-paginate';
 	let itemsDefault = [
 		{
@@ -75,7 +89,9 @@
 		} else if (open === false) {
 			open = true;
 		}
-		currID = id;
+		if (id !== null) {
+			currID = id;
+		}
 	};
 
 	function getCurr(id) {
@@ -93,6 +109,13 @@
 			}
 		});
 		return searchedArray;
+	}
+
+	function edit(var1) {
+		if (var1 == null) {
+			open = true;
+		} else {
+		}
 	}
 	//use $: so that when variable changes you execute the code that you want
 
@@ -162,10 +185,11 @@
 	<main>
 		<div class="w-10/12 lg:w-1/2 mx-auto mb-10">
 			<h1 class="text-center text-4xl font-bold my-5">Creaties</h1>
-            <div class="mx-auto w-fit">
-                <button class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-2"
-                    >nieuw</button
-                ></div>
+			<div class="mx-auto w-fit">
+				<button class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-2"
+					>nieuw</button
+				>
+			</div>
 			<div class="mx-5">
 				<div class="relative py-4">
 					<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none" />
@@ -248,30 +272,85 @@
 {#if section === 2}
 	<main>
 		<div class="aboutContainer">
-			<h1 class="text-4xl pb-2 font-bold">Dit ben ik</h1>
-			<h4 class="text-gray-400 text-xl">email</h4>
-			<h4 class="text-gray-400 text-xl py-1">telefoon</h4>
+			<h1 class="text-4xl pb-2 font-bold">{name}</h1>
+			<h4 class="text-gray-400 text-xl">{email}</h4>
+			<h4 class="text-gray-400 text-xl py-1">{phone}</h4>
 			<hr class="solidDivider" />
 			<p class="text-gray-400 text-base">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rutrum ex quis
-				dapibus. Sed tempor turpis et neque dictum finibus. Suspendisse gravida risus ut urna
-				euismod suscipit. Donec sem nisi, sodales et congue ac, ullamcorper sed justo. In ut augue
-				at tellus consectetur rhoncus. Donec faucibus consectetur orci, auctor vulputate odio
-				vestibulum quis. Curabitur rutrum efficitur lectus eget euismod. Maecenas at posuere orci.
-				Mauris luctus lacinia risus, eget ornare turpis tincidunt in. Donec sit amet dui quis augue
-				pellentesque interdum ac eget velit. Nullam sodales venenatis nisi non blandit. Proin
-				cursus, dolor nec aliquam tristique, sapien nisi faucibus nisi, ac facilisis purus lectus
-				dapibus dolor.
+				{desc}
 			</p>
 			<hr class="solidDivider mt-10" />
 			<div class="z-index-10 flex justify-center flex-column lg:flex-row">
 				<button
+					on:click={() => edit(null)}
 					class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
 					>edit</button
 				>
 			</div>
 		</div>
 	</main>
+{/if}
+{#if section !== 0}
+	{#if open}
+		{#if section === 2}
+			<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+				<div class="fixed z-10 inset-0 overflow-y-auto">
+					<div class="flex items-end items-center justify-center min-h-full p-4 text-center lg:p-0">
+						<div
+							class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all lg:my-8 lg:max-w-4xl lg:w-full"
+						>
+							<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+								<div class="text-center">
+									<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-center">
+										<div class="mt-2">
+											<input
+												type="text"
+												id="name"
+												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+												value={name}
+											/><br />
+											<input
+												type="text"
+												id="email"
+												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+												value={email}
+											/><br />
+											<input
+												type="text"
+												id="phone"
+												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+												value={phone}
+											/><br />
+											<textarea
+												class="w-full px-3 py-2 text-gray-700 border text-sm rounded-lg focus:outline-none"
+												rows="10"
+												value={desc}
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="bg-white px-4 py-3 sm:px-6 flex-center">
+								<div
+									class="m-auto text-center bg-green-300 hover:bg-green-500 rounded border border-gray-900"
+								>
+									<button class="m-1" on:click={() => toggle(null)}>Save</button>
+								</div>
+								<br />
+								<div
+									class="m-auto text-center bg-green-300 hover:bg-green-500 rounded border border-gray-900"
+								>
+									<button class="m-1" on:click={() => toggle(null)}>Sluiten</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{/if}
+	{/if}
 {/if}
 
 <style>
