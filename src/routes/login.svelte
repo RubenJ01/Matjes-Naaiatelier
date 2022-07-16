@@ -8,15 +8,22 @@
 			type="text"
 			placeholder="gebruikersnaam"
 			id="username"
-			class="mt-5 py-2 text-center w-10/12 border rounded mx-auto self-center"
+			class="my-5 py-4 mx-auto self-center text-center bg-white border border focus:outline-none focus:border-green-300 focus:ring-green-300 block w-10/12 rounded-md sm:text-sm focus:ring-1"
 		/>
-        <input type="email" name="email" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="you@example.com" />
+		<input
+			type="email"
+			name="email"
+			class="my-5 py-4 mx-auto self-center text-center text-center bg-white border  border focus:outline-none focus:border-green-300 focus:ring-green-300 block w-10/12 rounded-md sm:text-sm focus:ring-1"
+			placeholder="you@example.com"
+		/>
 		<input
 			type="password"
 			placeholder="wachtwoord"
 			id="password"
-			class="my-5 mb-12 py-2 text-center w-10/12 border rounded mx-auto self-center"
+			class="my-5 mb-5 py-4 mx-auto self-center text-center text-center bg-white border border focus:outline-none focus:border-green-300 focus:ring-green-300 block w-10/12 rounded-md sm:text-sm focus:ring-1"
 		/>
+
+        <button class="bg-white hover:border-green-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 w-3/12 rounded self-center mb-10">Log In</button>
 	</div>
 </main>
 
