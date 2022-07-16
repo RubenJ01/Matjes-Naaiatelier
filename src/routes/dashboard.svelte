@@ -297,7 +297,7 @@
 				<button
 					on:click={() => edit(null)}
 					class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-					>edit</button
+					>Aanpassen</button
 				>
 			</div>
 		</div>
