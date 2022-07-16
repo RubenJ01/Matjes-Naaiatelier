@@ -89,7 +89,6 @@
 		});
 		return searchedArray;
 	}
-	//use $: so that when variable changes you execute the code that you want
 	
 	$: paginatedItems = paginate({ items, pageSize, currentPage });
 

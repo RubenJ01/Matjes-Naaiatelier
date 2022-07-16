@@ -5,9 +5,9 @@
 			<div class="hidden sm:block sm:ml-6 flex">
 				<div class="flex space-x-8 self-center py-2">
 					<a
-						href="/testBed"
-						class="text-gray-800 self-left hover:bg-white px-3 py-3 rounded-md text-2xl font-large"
-						>testbed</a
+						href="/login"
+						class="text-gray-800 self-left hover:bg-white px-3 py-3 rounded-md text-2xl font-large focus:ring-1"
+						>Login</a
 					>
 					<a
 						href="/creaties"
@@ -31,7 +31,7 @@
 						class="text-gray-800 hover:bg-white px-3 py-3 rounded-md text-2xl font-large">About</a
 					>
 					<a
-						href="/dashboardPrivate"
+						href="/dashboard"
 						class="text-gray-800 self-left hover:bg-white px-3 py-3 rounded-md text-2xl font-large"
 						>dashboard</a
 					>
@@ -40,7 +40,6 @@
 		</div>
 	</div>
 
-	<!-- Mobile menu, show/hide based on menu state. -->
 	<div class="sm:hidden justify-center" id="mobile-menu">
 		<div class="px-2 space-y-1 text-center pt-1 pb-4">
 			<a
