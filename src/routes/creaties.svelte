@@ -210,7 +210,7 @@
 							</div>
 						</div>
 						<div class="bg-white px-4 py-3 sm:px-6 flex-center">
-							<div class="m-auto text-center bg-green-300 hover:bg-green-500 rounded border border-gray-900">
+							<div class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded-md my-4 w-full mx-auto px-2">
 								<button class="m-1 w-full" on:click={() => toggle(null)}>Sluiten</button>
 							</div>
 						</div>

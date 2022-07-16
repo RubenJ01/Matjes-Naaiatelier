@@ -313,7 +313,7 @@
 						<div
 							class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all lg:my-8 lg:max-w-4xl lg:w-full"
 						>
-							<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+							<div class="bg-white px-4 pt-5 pb-4">
 								<div class="text-center">
 									<div class="mt-3 text-center sm:text-center">
 										<div class="mt-2">
@@ -345,17 +345,16 @@
 								</div>
 							</div>
 
-							<div class="bg-white px-4 py-3 sm:px-6 flex-center">
+							<div class="bg-white px-4">
 								<div on:click={save} class="w-full flex justify-center">
 									<button
-										class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded my-2self-center w-full"
-										>Save</button
+										class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded-md self-center w-full"
+										>Opslaan</button
 									>
 								</div>
-								<br />
 								<div on:click={() => toggle(null)} class="w-full flex justify-center">
 									<button
-										class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded my-2 self-center w-full"
+										class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded-md my-4 self-center w-full"
 										>Sluiten</button
 									>
 								</div>
