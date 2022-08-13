@@ -237,7 +237,7 @@
 										<br />
 									</div>
 								</div>
-								<div class="relative border-solid w-full inline-block">
+								<div class="relative w-full inline-block">
 									{#if getCurr(currID).src.length > 1}
 										<a class="prev" on:click={() => setCurrImg(currID, "prev")}>&#10094;</a>
 										<a class="next" on:click={() => setCurrImg(currID, "next")}>&#10095;</a>
@@ -283,7 +283,7 @@
 }
 .prev,
 .next {
-	@apply top-1/2 inline px-2 py-1 cursor-pointer absolute w-auto text-white font-bold text-sm select-none md:text-xl;
+	@apply top-1/2 inline px-4 py-4 cursor-pointer absolute w-auto text-white font-bold text-sm select-none md:text-xl;
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
