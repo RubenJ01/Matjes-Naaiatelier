@@ -3,6 +3,7 @@
 </script>
 
 <main>
+	<body>
 	<div class="lg:w-1/2 w-10/12 border rounded mx-auto my-24 flex flex-col">
 		<h1 class="text-4xl font-bold text-center self-center w-full py-5">Log In</h1>
 		<hr class="border rounded w-10/12 self-center" />
@@ -30,6 +31,7 @@
 			id="loginButton">Log In</button
 		>
 	</div>
+</body>
 </main>
 
 <style>

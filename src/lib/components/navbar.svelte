@@ -1,8 +1,8 @@
 <nav class="bg-green-300">
-	<div class="flex items-center justify-between h-16 hidden sm:inline">
-		<div class="absolute inset-y-0 left-0 flex items-center sm:hidden" />
-		<div class="flex-1 flex items-center justify-center sm:items-stretch">
-			<div class="hidden sm:block sm:ml-6 flex">
+	<div class="flex items-center justify-between h-16 hidden md:inline">
+		<div class="absolute inset-y-0 left-0 flex items-center md:hidden" />
+		<div class="flex-1 flex items-center justify-center md:items-stretch">
+			<div class="hidden md:block md:ml-6 flex">
 				<div class="flex space-x-8 self-center py-2">
 					<a
 						href="/login"
@@ -40,7 +40,7 @@
 		</div>
 	</div>
 
-	<div class="sm:hidden justify-center" id="mobile-menu">
+	<div class="md:hidden justify-center" id="mobile-menu">
 		<div class="px-2 space-y-1 text-center pt-1 pb-4">
 			<a
 				href="/"

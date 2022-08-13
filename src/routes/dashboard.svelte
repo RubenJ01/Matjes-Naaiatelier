@@ -258,7 +258,7 @@
 						<div class="z-index-10 flex justify-center flex-column lg:flex-row">
 							<button
 								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-								>bewerken</button
+								>aanpassen</button
 							>
 							<button
 								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
@@ -272,7 +272,7 @@
 	</main>
 	<div class="test">
 		<LightPaginationNav
-			class="test"
+		 	class="test"
 			totalItems={items.length}
 			{pageSize}
 			{currentPage}
