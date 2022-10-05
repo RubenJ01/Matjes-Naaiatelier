@@ -8,7 +8,7 @@
 
 	function onChange() {
 		const file = input.files[0];
-        container.innerHTML = ""
+		container.innerHTML = '';
 		if (file) {
 			imgArr.push(file);
 
@@ -28,13 +28,42 @@
 	}
 </script>
 
-<h1>Image Preview on File Upload</h1>
-<input bind:this={input} on:change={onChange} type="file" />
-<div bind:this={container} />
+<input bind:this={input} on:change={onChange} type="file" id="file-input" />
+<label for="file-input">
+	<i /> &nbsp; Choose A Photo
+</label>
+<div class="imgContainer" bind:this={container} />
 
 <style>
-	#preview {
-		height: 200px;
-		border: 1px;
-	}
+    .preview {
+        width: 10%;
+    }
+
+    label{
+        display: block;
+        position: relative;
+        background-color: #86efac;
+        color: #ffffff;
+        font-size: 18px;
+        text-align: center;
+        width: 300px;
+        padding: 18px 0;
+        margin-top: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #imgContainer {
+        width: 200px;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: solid;
+    }
+
+    #file-input {
+        display: none;
+    }
 </style>
