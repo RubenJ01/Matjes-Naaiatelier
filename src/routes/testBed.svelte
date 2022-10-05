@@ -1,44 +1,40 @@
 <script>
-	let  avatar, fileinput;
-	
-	const onFileSelected =(e)=>{
-            let image = e.target.files[0];
-            let reader = new FileReader();
-            reader.readAsDataURL(image);
-            reader.onload = e => {
-                 avatar = e.target.result
-            };
-}
-	
-</script>
-<div id="app">
-	<h1>Upload Image</h1>
-    <div class="border-2 rounded-xl bg-green-300 p-4 chan" on:click={()=>{fileinput.click();}}>Choose Image</div>
-    <input style="display:none" type="file" accept=".jpg, .jpeg, .png" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
-        {#if avatar}
-        <img class="avatar" src="{avatar}" alt="d" />
-        {:else}
-        <img class="avatar" alt="" /> 
-        {/if}
+	let input;
+	let container;
+	let image;
+	let placeholder;
+	let showImage = false;
+	let imgArr = [];
 
+	function onChange() {
+		const file = input.files[0];
+        container.innerHTML = ""
+		if (file) {
+			imgArr.push(file);
 
-</div>
-<style>
-	#app{
-	display:flex;
-		align-items:center;
-		justify-content:center;
-		flex-flow:column;
-}
- 
-	.upload{
-		display:flex;
-	height:50px;
-		width:50px;
-		cursor:pointer;
+			for (let i of imgArr) {
+				let reader = new FileReader();
+
+				reader.onload = () => {
+					let img = document.createElement('img');
+					img.classList.add('preview');
+					img.setAttribute('src', reader.result);
+					container.appendChild(img);
+				};
+
+				reader.readAsDataURL(i);
+			}
+		}
 	}
-	.avatar{
-		display:flex;
-		height:200px;
+</script>
+
+<h1>Image Preview on File Upload</h1>
+<input bind:this={input} on:change={onChange} type="file" />
+<div bind:this={container} />
+
+<style>
+	#preview {
+		height: 200px;
+		border: 1px;
 	}
 </style>
