@@ -20,6 +20,8 @@
 	let phoneEdit = phone;
 	let nameEdit = name;
 
+	
+
 	let nameEditProduct = "naam";
 	let priceEditProduct = "20 euro";
 	let descEditProduct = "testtststetstetdtst";
@@ -177,6 +179,31 @@
 	function swap(par) {
 		section = par;
 	}
+
+function preview(){
+    imageContainer.innerHTML = "";
+
+    for(i of fileInput.files){
+        savedArr.push(i);
+    }
+
+    for(i of savedArr) {
+        let reader = new FileReader();
+        let figure = document.createElement("figure");
+        let figCap = document.createElement("figcaption");
+        figCap.innerText = i.name;
+        figure.appendChild(figCap);
+        reader.onload=()=>{
+            let img = document.createElement("img");
+            img.setAttribute("src",reader.result);
+            figure.insertBefore(img,figCap);
+        }
+        imageContainer.appendChild(figure);
+        reader.readAsDataURL(i);
+    }
+
+    numOfFiles.textContent = `${savedArr.length} fotos geselecteerd`;
+}
 </script>
 
 <div
