@@ -20,6 +20,10 @@
 	let phoneEdit = phone;
 	let nameEdit = name;
 
+	let nameEditProduct = "naam";
+	let priceEditProduct = "20 euro";
+	let descEditProduct = "testtststetstetdtst";
+
 	if (loggedIn !== 1) {
 		section = 0;
 	}
@@ -128,6 +132,13 @@
 		email = emailEdit;
 		phone = phoneEdit;
 		desc = descEdit;
+		toggle(null);
+	}
+
+	function saveProduct() {
+		name = nameEditProduct;
+		email = priceEditProduct;
+		desc = descEditProduct;
 		toggle(null);
 	}
 	//use $: so that when variable changes you execute the code that you want
@@ -257,9 +268,10 @@
 						<hr class="solidDivider  mt-10" />
 						<div class="z-index-10 flex justify-center flex-column lg:flex-row">
 							<button
-								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
-								>aanpassen</button
-							>
+					on:click={() => edit(null)}
+					class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
+					>Aanpassen</button
+				>
 							<button
 								class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded my-5 mx-5"
 								>verwijderen</button
@@ -363,6 +375,62 @@
 					</div>
 				</div>
 			</div>
+		{/if}
+	{#if open}
+		{#if section === 1}
+			<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+				<div class="fixed z-10 inset-0 overflow-y-auto">
+					<div class="flex items-end items-center justify-center min-h-full p-4 text-center lg:p-0">
+						<div
+							class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all lg:my-8 lg:max-w-4xl lg:w-full"
+						>
+							<div class="bg-white px-4 pt-5 pb-4">
+								<div class="text-center">
+									<div class="mt-3 text-center sm:text-center">
+										<div class="mt-2">
+											<input
+												bind:value={nameEditProduct}
+												type="text"
+												id="naam"
+												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+											/><br />
+											<input
+												bind:value={priceEditProduct}
+												type="text"
+												id="prijs"
+												class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+											/><br />
+											
+											<textarea
+												bind:value={descEditProduct}
+												class="w-full px-3 py-2 text-gray-700 border text-sm rounded-lg focus:outline-none"
+												rows="10"
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="bg-white px-4">
+								<div on:click={save} class="w-full flex justify-center">
+									<button
+										class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded-md self-center w-full"
+										>Opslaan</button
+									>
+								</div>
+								<div on:click={() => toggle(null)} class="w-full flex justify-center">
+									<button
+										class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 rounded-md my-4 self-center w-full"
+										>Sluiten</button
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{/if}
 		{/if}
 	{/if}
 {/if}
