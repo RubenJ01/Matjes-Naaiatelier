@@ -20,7 +20,13 @@
 	let phoneEdit = phone;
 	let nameEdit = name;
 
-	
+	let input2;
+	let container;
+	let image;
+	let placeholder;
+	let showImage = false;
+	let imgArr = [];
+
 
 	let nameEditProduct = "naam";
 	let priceEditProduct = "20 euro";
@@ -142,6 +148,27 @@
 		email = priceEditProduct;
 		desc = descEditProduct;
 		toggle(null);
+	}
+
+	function onChange() {
+		const file = input2.files[0];
+		container.innerHTML = '';
+		if (file) {
+			imgArr.push(file);
+
+			for (let i of imgArr) {
+				let reader = new FileReader();
+
+				reader.onload = () => {
+					let img = document.createElement('img');
+                    img.id = "imgUploaded"
+					img.setAttribute('src', reader.result);
+					container.appendChild(img);
+				};
+
+				reader.readAsDataURL(i);
+			}
+		}
 	}
 	//use $: so that when variable changes you execute the code that you want
 
@@ -434,6 +461,12 @@ function preview(){
 												class="w-full px-3 py-2 text-gray-700 border text-sm rounded-lg focus:outline-none"
 												rows="10"
 											/>
+											<input bind:this={input2} on:change={onChange} type="file" id="file-input" />
+											<label for="file-input">
+												<i /> &nbsp; Choose A Photo
+											</label>
+											<div id="imgContainer" class="flex border-2 mx-auto items-center" bind:this={container} />
+
 										</div>
 									</div>
 								</div>
@@ -472,4 +505,39 @@ function preview(){
 	.test :global(.option.active) {
 		@apply text-green-300;
 	}
+
+	.preview {
+        width: 100px;
+    }
+
+    label{
+        display: block;
+        position: relative;
+        background-color: #86efac;
+        color: #ffffff;
+        font-size: 18px;
+        text-align: center;
+        width: 300px;
+        padding: 18px 0;
+        margin-top: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #imgUploaded {
+        align-self: center;
+    }
+
+    #imgContainer {
+        width: 50%;
+        border-style: solid;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #file-input {
+        display: none;
+    }
 </style>
