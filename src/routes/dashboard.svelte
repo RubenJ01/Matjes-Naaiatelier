@@ -160,10 +160,12 @@
 				let reader = new FileReader();
 
 				reader.onload = () => {
+					let br = document.createElement("br");
 					let img = document.createElement('img');
                     img.id = "imgUploaded"
 					img.setAttribute('src', reader.result);
 					container.appendChild(img);
+					container.appendChild(br)
 				};
 
 				reader.readAsDataURL(i);
@@ -462,10 +464,10 @@ function preview(){
 												rows="10"
 											/>
 											<input bind:this={input2} on:change={onChange} type="file" id="file-input" />
-											<label for="file-input">
-												<i /> &nbsp; Choose A Photo
+											<label for="file-input text-gray-900 text-sm">
+												<i /> &nbsp; Foto's Kiezen
 											</label>
-											<div id="imgContainer" class="flex border-2 mx-auto items-center" bind:this={container} />
+											<div id="imgContainer" class="flex space-y-2 mx-auto items-center flex-col" bind:this={container} />
 
 										</div>
 									</div>
@@ -531,8 +533,7 @@ function preview(){
     }
 
     #imgContainer {
-        width: 50%;
-        border-style: solid;
+        width: 40%;
         align-items: center;
         justify-content: center;
     }
