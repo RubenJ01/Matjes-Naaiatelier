@@ -512,7 +512,7 @@ function preview(){
         width: 100px;
     }
 
-    label{
+    label {
         display: block;
         position: relative;
         background-color: #86efac;
