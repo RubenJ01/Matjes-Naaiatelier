@@ -17,7 +17,7 @@
 
 				reader.onload = () => {
 					let img = document.createElement('img');
-					img.classList.add('preview');
+                    img.id = "imgUploaded"
 					img.setAttribute('src', reader.result);
 					container.appendChild(img);
 				};
@@ -32,11 +32,11 @@
 <label for="file-input">
 	<i /> &nbsp; Choose A Photo
 </label>
-<div class="imgContainer" bind:this={container} />
+<div id="imgContainer" class="flex border-2 mx-auto items-center" bind:this={container} />
 
 <style>
     .preview {
-        width: 10%;
+        width: 100px;
     }
 
     label{
@@ -55,12 +55,16 @@
         cursor: pointer;
     }
 
+    #imgUploaded {
+        align-self: center;
+    }
+
     #imgContainer {
-        width: 200px;
-        height: 50%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 50%;
+        height: 100%;
         border-style: solid;
+        align-items: center;
+        justify-content: center;
     }
 
     #file-input {
