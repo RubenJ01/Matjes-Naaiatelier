@@ -464,11 +464,10 @@ function preview(){
 												rows="10"
 											/>
 											<input bind:this={input2} on:change={onChange} type="file" id="file-input" />
-											<label for="file-input text-gray-900 text-sm">
-												<i /> &nbsp; Foto's Kiezen
-											</label>
-											<div id="imgContainer" class="flex space-y-2 mx-auto items-center flex-col" bind:this={container} />
-
+<label for="file-input">
+	<i /> &nbsp; Choose A Photo
+</label>
+<div id="imgContainer" class="flex mx-auto items-center py-4 flex-col gap-y-2" bind:this={container} />
 										</div>
 									</div>
 								</div>
@@ -524,18 +523,19 @@ function preview(){
         margin-top: 16px;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 5px;
         cursor: pointer;
     }
 
     #imgUploaded {
         align-self: center;
+		margin-bottom: 4em;
     }
 
     #imgContainer {
         width: 40%;
         align-items: center;
         justify-content: center;
+		padding-bottom: 4em;
     }
 
     #file-input {
